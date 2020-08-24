@@ -4,12 +4,14 @@ import './styles.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Api from './components/Api'
+import ApiNasa from './components/ApiNasa'
 
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
     <Api />
+    {/* <ApiNasa /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

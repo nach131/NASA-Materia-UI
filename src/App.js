@@ -28,7 +28,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Header />
       <Intro />
-      <Cards />
+      {/* <Cards /> */}
 
 
     </ThemeProvider>

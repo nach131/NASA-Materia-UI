@@ -1,12 +1,19 @@
-import React, { useState}  from 'react';
+import React, { useState, useEffect}  from 'react';
 
 export default function AsyncHooks(){
   const [search, setSearch] = useState('')
+  const [query, setQuery] = useState('');
 
   function onSubmit(e) {
     e.preventDefault();
-    console.log(search)
+    setQuery(search);
+    // console.log(search)
   }
+useEffect(() => {
+console.log({query})
+});
+
+
 
 return (
   <div>

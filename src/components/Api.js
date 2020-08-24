@@ -15,21 +15,17 @@ const useFetch = (url) => {
   return {data, loading};
 }
 
-
 export default () => {
-  // const [contar, setContar] = useState(0);
+  const [contar, setContar] = useState(0);
   const { data, loading } = useFetch("https://api.randomuser.me/")
-
-
-
   return (
     <div>
-      {/* <p>
+      <p>
         Tu click {contar} veces
     </p>
-      <button onClick={() => setContar(contar + 1)}>Click</button> */}
-      {loading ? <h1>...loading</h1> : <div>{data.name.first}</div>}
+      <button onClick={() => setContar(contar + 1)}>Click</button>
+      <h4>Nombre aleatorio</h4>
+      {loading ? <h1>...loading</h1> : <h1>{data.name.first}</h1>}
     </div>
   );
-
 };

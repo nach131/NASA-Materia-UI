@@ -5,11 +5,9 @@ export default () => {
   const [contar, setContar] = useState(0)
 
   //similar a componentDidMount y componentDidUpdate
-  useEffect(() => {
-    document.nacho = `Tu click ${contar} veces`
-
-
-  })
+  useEffect(async () => {
+    const respuesta = await fetch();
+  }, []);
 
 
   return (
@@ -19,6 +17,6 @@ export default () => {
     </p>
       <button onClick={() => setContar(contar + 1)}>Click</button>
     </div>
-  )
+  );
 
-}
+};

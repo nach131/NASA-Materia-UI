@@ -4,7 +4,7 @@ import './styles.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Api from './components/Api'
-import ApiNasa from './components/ApiNasa'
+// import ApiNasa from './components/ApiNasa'
 
 
 ReactDOM.render(

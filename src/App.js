@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './components/Header';
 import Intro from './components/Intro';
+import RenderApi from './components/test/RenderApi'
+
 
 
 // import Cards from './components/Cards'
@@ -28,6 +30,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <Header />
       <Intro />
+    <RenderApi/>
+
       {/* <Cards /> */}
 
 

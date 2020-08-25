@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-
-
 export default function AsyncHooks() {
   const [search, setSearch] = useState('')
   const [query, setQuery] = useState('');
-
 
   useEffect(() => {
     async function fetchData() {
@@ -20,8 +17,6 @@ export default function AsyncHooks() {
       fetchData();
     }
   }, [query]);
-
-
 
   return (
     <div>
@@ -40,3 +35,4 @@ export default function AsyncHooks() {
     </div>
   )
 }
+

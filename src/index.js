@@ -3,15 +3,17 @@ import ReactDOM from 'react-dom';
 import './styles.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Api from './components/test/ApiGiphy'
+// import Api from './components/test/ApiOriLlamada'
 // import ApiNasa from './components/test/ApiNasa'
+import RenderApi from './components/test/RenderApi'
 
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Api />
+    {/* <Api /> */}
     {/* <ApiNasa /> */}
+    <RenderApi/>
   </React.StrictMode>,
   document.getElementById('root')
 );

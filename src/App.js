@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Intro from './components/Intro';
 
 
-import Cards from './components/Cards'
+// import Cards from './components/Cards'
 import './styles.css';
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';

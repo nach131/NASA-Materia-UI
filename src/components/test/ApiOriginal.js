@@ -35,7 +35,7 @@ export default function AsyncHooks() {
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('');
   const [results, loading] = useGiphy(query);
-console.log(results)
+// console.log(results)
   return (
     <div>
       <h1>Async React Hooks</h1>

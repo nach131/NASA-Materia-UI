@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './styles.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Api from './components/test/ApiDos'
+import Api from './components/test/ApiGiphy'
 import ApiNasa from './components/test/ApiNasa'
 
 

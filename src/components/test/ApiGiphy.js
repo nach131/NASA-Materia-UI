@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function AsyncHooks() {
-  const [search, setSearch] = useState('')
-  const [query, setQuery] = useState('');
+function useGiphy(query){
   const [resultados, setResultados] = useState([]);
 
   useEffect(() => {
@@ -24,6 +22,16 @@ export default function AsyncHooks() {
     }
   }, [query, resultados]);
 
+  return resultados
+}
+
+export default function AsyncHooks() {
+  const [search, setSearch] = useState('')
+  const [query, setQuery] = useState('');
+
+  const resultados = useGiphy(query)
+
+
   return (
     <div>
       <h1>AsyncHooks</h1>
@@ -39,8 +47,9 @@ export default function AsyncHooks() {
         <button type="submit">Search</button>
       </form>
       <br />
-      {resultados.map(item => (<h3 key={item}>{item}</h3>))}
+      {/* {resultados.map(item => (<h3 key={item}>{item}</h3>))} */}
+
+      {resultados.map(item => (<video autoPlay loop key={item} src={item}/>))}
     </div>
   )
 }
-

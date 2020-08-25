@@ -5,18 +5,18 @@ export default function AsyncHooks() {
   const [query, setQuery] = useState('');
   const [resultados, setResultados] = useState([]);
 
-
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`https://images-api.nasa.gov/search?q=${query}`);
+        const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=gvYWMneH5JY1E3kCJsXsWn9VkoCtRcMQ&q=${query}&limit=10&offset=0&rating=r&lang=en
+    `);
         const json = await response.json();
         setResultados(
-          json.collection.items.map(item => {
-            return item;
+          json.data.map(item => {
+            return item.images.preview.mp4;
           })
-        )
-        // console.log({ resultados })
+        );
+        // console.log({ json })
       } catch (error) { }
     }
     if (query !== '') {
@@ -26,7 +26,7 @@ export default function AsyncHooks() {
 
   return (
     <div>
-      <h1>NASA</h1>
+      <h1>AsyncHooks</h1>
       <form onSubmit={e => {
         e.preventDefault();
         setQuery(search);
@@ -37,19 +37,11 @@ export default function AsyncHooks() {
           placeholde="Vuscar Gif"
           type="text" />
         <button type="submit">Search</button>
-        <br />
-        {resultados.map((postData, i) => (
-          <div key="i">
-
-            {console.log(postData)}
-            <h5>{postData.data[0].nasa_id}</h5>
-            <p>{postData.data[0].date_created}</p>
-            {/* <p>{postData.links[0].href}</p> */}
-            {/* <p>{postData.links[0].href}</p> */}
-          </div>
-        ))}
-
       </form>
+      <br />
+      {/* {resultados.map(item => (<h3 key={item}>{item}</h3>))} */}
+
+      {resultados.map(item => (<video autoPlay loop key={item} src={item}/>))}
     </div>
   )
 }
